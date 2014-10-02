@@ -1,4 +1,4 @@
-var main = require("../client/js/test.js");
+var main = require("../src/js/test.js");
 
 describe("test", function(){
 	it("blabla", function(){
