@@ -4,7 +4,10 @@ var source = require('vinyl-source-stream');
 var jasmine = require("gulp-jasmine");
 
 function compile(){
-	return browserify('./src/js/main.js', { debug: true })
+	return browserify([
+		"./src/lib/paho/paho.js",
+		'./src/js/main.js'
+	], { debug: true })
 		.bundle()
 		//Pass desired output filename to vinyl-source-stream
 		.pipe(source('bundle.js'))

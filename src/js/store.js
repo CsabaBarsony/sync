@@ -1,18 +1,32 @@
 var Dispatcher = require("./dispatcher.js");
 var merge = require("react/lib/merge");
 var EventEmitter = require("events").EventEmitter;
+var xhr = require("xhr");
 var CHANGE_EVENT = "change";
+var client = new Paho.MQTT.Client("localhost", 8000, "csati");
 
-_items = {
-	1: { data: Math.random(), ts: new Date().getTime() },
-	2: { data: Math.random(), ts: new Date().getTime() }
+var items = {};
+
+client.connect({
+	onSuccess: function(){
+		console.log("connected to MQTT server");
+		client.subscribe("items/#");
+	}
+});
+
+client.onMessageArrived = function(message){
+	console.log(message.payloadString);
 };
 
-var _nextKey = 3;
-
 function _addItem(){
-	_items[_nextKey] = { data: Math.random(), ts: new Date().getTime() };
-	_nextKey++;
+	xhr({
+		method: "post",
+		body: JSON.stringify({ data: "majom" }),
+		uri: "/list/add",
+		headers: {
+			"Content-Type": "application/json"
+		}
+	}, function(){});
 }
 
 var Store = merge(EventEmitter.prototype, {
@@ -29,7 +43,7 @@ var Store = merge(EventEmitter.prototype, {
 	},
 
 	getItems: function(){
-		return _items;
+		return {};
 	},
 
 	dispatcherIndex: Dispatcher.register(function(payload){

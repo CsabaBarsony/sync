@@ -14,7 +14,7 @@ var Display = React.createClass({
 	},
 	render: function(){
 		var items = [];
-		_.each(_items, function(item){
+		_.each(this.state.items, function(item){
 			items.push(React.DOM.tr(
 				null,
 				React.DOM.td(null, "data: " + item.data),
