@@ -10,12 +10,13 @@
     "jquery": "~2.1.1",
     "gulp": "~3.8.8",
     "path": "~0.4.9",
-    "vinyl-source-stream": "~1.0.0"
+    "vinyl-source-stream": "~1.0.0",
+    "mqtt": "~0.3.12"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "CsabaBarsony",
-  "license": "MIT"
+  "license": "CC BY-NC"
 }

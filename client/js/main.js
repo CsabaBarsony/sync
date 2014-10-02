@@ -1,8 +1,8 @@
 var $ = require("jquery");
 $.ajax({
 	type: "GET",
-	url: "/test",
+	url: "/list",
 	success: function(data){
-		console.log("api data:", data);
+		console.log("list:", data);
 	}
 });
