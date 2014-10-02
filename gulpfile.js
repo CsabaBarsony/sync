@@ -18,10 +18,9 @@ gulp.task("jasmine", function(){
 });
 
 gulp.task('test', function() {
-	gulp.watch('./client/js/**/*.js', ['jasmine']);
-	gulp.watch("./test/**/*.js", ['jasmine']);
+	gulp.watch(['./client/js/**/*.js', "./test/**/*.js"], ['jasmine']);
 });
 
 gulp.task('watch', function() {
-	gulp.watch('./client/js/**/*.*', ['browserify']);
+	gulp.watch('./client/js/**/*.*', ['compile']);
 });
