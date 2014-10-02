@@ -8,7 +8,7 @@ var client = mqtt.createClient(1883, "localhost");
 var list = {};
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, "../client")));
+app.use(express.static(path.join(__dirname, "../public")));
 
 function changeList(){
 	var key = "" + Math.floor(Math.random() * 5 + 1);

@@ -1,10 +1,4 @@
-var $ = require("jquery");
-var x = 1;
+var React = require("react");
+var App = require("./components/app.js");
 
-$.ajax({
-	type: "GET",
-	url: "/list",
-	success: function(data){
-		console.log("list:", data);
-	}
-});
+React.renderComponent(App(), document.body);

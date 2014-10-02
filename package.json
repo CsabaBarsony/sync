@@ -13,7 +13,10 @@
     "vinyl-source-stream": "~1.0.0",
     "mqtt": "~0.3.12",
     "gulp-jasmine": "~1.0.1",
-    "underscore": "~1.7.0"
+    "underscore": "~1.7.0",
+    "events": "~1.0.2",
+    "es6-promise": "~1.0.0",
+    "react": "~0.11.2"
   },
   "devDependencies": {},
   "scripts": {

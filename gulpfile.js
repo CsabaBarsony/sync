@@ -3,13 +3,17 @@ var gulp = require('gulp');
 var source = require('vinyl-source-stream');
 var jasmine = require("gulp-jasmine");
 
-gulp.task('compile', function() {
+function compile(){
 	return browserify('./src/js/main.js', { debug: true })
 		.bundle()
 		//Pass desired output filename to vinyl-source-stream
 		.pipe(source('bundle.js'))
 		// Start piping stream to tasks!
 		.pipe(gulp.dest('./public/js/'));
+}
+
+gulp.task('compile', function() {
+	compile();
 });
 
 gulp.task("jasmine", function(){
@@ -22,5 +26,6 @@ gulp.task('test', function() {
 });
 
 gulp.task('watch', function() {
+	compile();
 	gulp.watch('./src/js/**/*.*', ['compile']);
 });
