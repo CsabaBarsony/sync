@@ -1,0 +1,1 @@
+Synchronized list with React and Flux
