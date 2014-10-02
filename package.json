@@ -11,7 +11,9 @@
     "gulp": "~3.8.8",
     "path": "~0.4.9",
     "vinyl-source-stream": "~1.0.0",
-    "mqtt": "~0.3.12"
+    "mqtt": "~0.3.12",
+    "gulp-jasmine": "~1.0.1",
+    "underscore": "~1.7.0"
   },
   "devDependencies": {},
   "scripts": {

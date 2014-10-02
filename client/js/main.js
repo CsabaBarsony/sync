@@ -1,4 +1,5 @@
 var $ = require("jquery");
+
 $.ajax({
 	type: "GET",
 	url: "/list",
@@ -6,3 +7,11 @@ $.ajax({
 		console.log("list:", data);
 	}
 });
+
+function sayName(){
+	return "majom";
+}
+
+module.exports = {
+	sayName: sayName
+};
